@@ -3,7 +3,9 @@ package adventofcode2020
 import (
 	"bufio"
 	"log"
+	"math"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -26,4 +28,16 @@ func FileIterator(fp string) chan string {
 		}
 	}()
 	return ch
+}
+
+func StringToInt(s string) int {
+	v, err := strconv.Atoi(s)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return v
+}
+
+func Abs(i int) int {
+	return int(math.Abs(float64(i)))
 }
